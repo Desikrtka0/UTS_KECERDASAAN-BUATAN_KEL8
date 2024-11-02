@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Buku dengan BFS</title> <!-- Judul aplikasi -->
+    <link rel="stylesheet" href="style.css"> <!-- Menyertakan file CSS -->
+</head>
+
+<body>
+    <!-- Form Login -->
+    <div id="login-form">
+        <h2>Login ke Manajemen Buku</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Dashboard setelah login -->
+    <div id="dashboard" class="hidden">
+        <!-- Sidebar Menu -->
+        <div class="sidebar">
+            <h3>Dashboard Perpustakaan</h3>
+           
+            <button class="sidebar-btn" onclick="displayBooks(books)">Daftar Buku</button>
+            <button class="sidebar-btn" onclick="showMemberCard()">Card Member</button>
+            
+            <!-- Fungsi baru untuk Card Member -->
+            <button class="sidebar-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <!-- Konten Utama -->
+        <div class="main-content">
+            <header>
+                <!-- Tombol Cari dan Input untuk Pencarian -->
+                <input type="text" id="search-input" placeholder="Cari Buku dengan BFS...">
+                <button onclick="searchBooks()">Cari</button>
+                <div class="user-section">
+                    <span>DDS</span> <!-- Inisial Dea Desi Bagus-->
+                </div>
+            </header>
+
+            <div id="book-management">
+                <h2>Daftar Buku</h2>
+                <div id="book-grid" class="grid-container"></div>
+                <div id="no-books-message" class="hidden">Tidak ada buku yang ditemukan.</div>
+            </div>
+
+            <div id="sub-books" class="hidden">
+                <h2>Sub Buku</h2>
+                <div id="sub-book-grid" class="grid-container"></div>
+                <button onclick="hideSubBooks()">Tutup</button>
+            </div>
+
+            <div id="member-card" class="hidden">
+                <h2>Card Member</h2>
+                <p>Nama Pengguna: TY</p>
+                <p>ID Member: 12345</p>
+                <button onclick="hideMemberCard()">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+
+</html>
